@@ -1,0 +1,22 @@
+Cd C:\sqlite
+sqlite3 superstore.db
+.mode csv
+.import ' C:\Users\siddh\OneDrive\Documents\Sample - Superstore.csv'
+superstore
+
+
+
+SELECT [Customer Name], SUM(Sales) AS Total_Sales FROM superstore GROUP BY
+[Customer Name] ORDER BY Total_Sales DESC;
+
+SELECT Category, AVG(Discount) AS Avg_Discount FROM superstore GROUP BY Category;
+
+SELECT City, SUM(Sales) AS Total_Sales FROM superstore GROUP BY City
+ORDER BY Total_Sales DESC LIMIT 5;
+
+SELECT [Product Name], SUM(Sales) AS Total_Sales FROM superstore GROUP BY
+[Product Name] HAVING Total_Sales > 5000;
+
+
+SELECT [Ship Mode], COUNT(*) AS Number_of_Orders FROM superstore GROUP BY [Ship
+Mode];
